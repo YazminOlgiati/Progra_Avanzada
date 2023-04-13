@@ -1,0 +1,30 @@
+<! –– En el head se pone lo que se ve en la pestaña <! ––
+«<! ––« En el body se pone lo que se muestra «––>«
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trivia de Películas</title>
+</head>
+<body>
+    <img src="static/images/portada.png" alt="">
+    <h1>La Trivia Virtual</h1>
+  
+    #### De acá para abajo arreglar
+    {%if esta_vacia:%}
+        <h3>La Biblioteca está vacía</h3>
+    {% else: %}
+        {% for libro in lista_libros: %}
+        <li>
+           {{libro.nombre}} - {{libro.autor}} - {{libro.puntaje}}/10 
+        </li>
+        {% endfor %}
+        <br>
+    {% endif %}
+    <form action="/add">        
+        <input type="submit" value="Agregar libros">
+      </form>
+</body>
+</html>
+
